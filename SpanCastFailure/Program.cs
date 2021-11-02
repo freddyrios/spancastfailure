@@ -3,8 +3,7 @@ using System;
 using System.Runtime.InteropServices;
 
 var bytes = Convert.FromHexString("0A0000000000000000");
-var vectorBytes = bytes.AsSpan()[1..];
-var vector = MemoryMarshal.Cast<byte, double>(vectorBytes);
+var vector = MemoryMarshal.Cast<byte, double>(bytes.AsSpan<byte>()[1..]);
 foreach (var value in vector)
     Console.Write(value);
 
