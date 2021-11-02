@@ -1,5 +1,7 @@
 # Span cast failure demo
 
+**Important Update:** it is documented behavior, but there is a workaround that can be used posted at https://github.com/dotnet/runtime/issues/61096.
+
 The issue has been reproduced by running the app in a raspberry pi with raspbian. The app was built in a x64 windows environment, by using dotnet publish, such like: 
 
     dotnet publish .\SpanCastFailure\ -r linux-arm --self-contained -f net5.0
