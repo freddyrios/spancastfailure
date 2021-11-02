@@ -2,8 +2,8 @@
 using System;
 using System.Runtime.InteropServices;
 
-var bytes = Convert.FromHexString("0A82412BE8419DD908000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
-var vectorBytes = bytes.AsSpan()[(sizeof(long) + 1)..];
+var bytes = Convert.FromHexString("0A0000000000000000");
+var vectorBytes = bytes.AsSpan()[1..];
 var vector = MemoryMarshal.Cast<byte, double>(vectorBytes);
 foreach (var value in vector)
     Console.Write(value);
